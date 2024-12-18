@@ -1,15 +1,15 @@
 import { Link } from "gatsby";
 import * as React from "react";
-import Navbar from "../components/navbar";
+import Navbar from "../../components/navbar";
 
-const IndexPage = () => {
+const PortfolioPage = () => {
   return (
     <div>
       <Navbar />
       <h1>Min första gatsby sida!</h1>
-      <Link to="/portfolio">Besök min portfolio</Link>
+      <Link to="/">Gå tillbaka till hem</Link>
     </div>
   );
 };
 
-export default IndexPage;
+export default PortfolioPage;
