@@ -2,14 +2,19 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
+const { Description } = require("@headlessui/react");
+
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
 module.exports = {
   siteMetadata: {
-    title: `My Gatsby Site`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Emils portfolio`,
+    siteUrl: `https://www.emilrundgren.com`,
+    description:
+      "A modern and responsive portfolio website where I, a frontend student, showcase my projects, technical skills, and passion for web development. It includes examples of my work, a brief 'About Me' section, and a contact form for easy communication.",
+    author: "Emil Rundgren",
   },
   plugins: [
     {

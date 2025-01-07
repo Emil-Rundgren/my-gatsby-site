@@ -1,6 +1,7 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import Navbar from "../components/navbar";
+import Seo from "../components/seo";
 
 const IndexPage = () => {
   return (
@@ -11,5 +12,7 @@ const IndexPage = () => {
     </div>
   );
 };
+
+export const Head = () => <Seo title="Hem"></Seo>;
 
 export default IndexPage;
