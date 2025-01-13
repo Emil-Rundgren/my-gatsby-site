@@ -2,8 +2,6 @@
  * @type {import('gatsby').GatsbyConfig}
  */
 
-const { Description } = require("@headlessui/react");
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
@@ -20,8 +18,8 @@ module.exports = {
     {
       resolve: "gatsby-source-contentful",
       options: {
-        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-        spaceId: process.env.CONTENTFUL_SPACE_ID,
+        accessToken: process.env.GATSBY_CONTENTFUL_ACCESS_TOKEN,
+        spaceId: process.env.GATSBY_CONTENTFUL_SPACE_ID,
       },
     },
     "gatsby-transformer-remark",

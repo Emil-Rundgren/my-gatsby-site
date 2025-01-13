@@ -2,6 +2,7 @@
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
+  // Get the data from the Contentful
   const result = await graphql(`
     query {
       allContentfulPortfolioItem {
@@ -14,9 +15,12 @@ exports.createPages = async ({ graphql, actions }) => {
 
   result.data.allContentfulPortfolioItem.nodes.forEach((node) => {
     createPage({
+      // The path is the URL that the page will be accessible at
       path: `/portfolio/${node.slug}`,
+      // The component is the template that will be used to render the page
       component: require.resolve("./src/templates/portfolio-item.js"),
-      context: { slug: node.slug },
+      // The context is passed to the template as props
+      context: { pageSlug: node.slug },
     });
   });
 };
