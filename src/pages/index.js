@@ -20,9 +20,10 @@ const HomePage = () => {
       }
     }
   `);
-
   const { title, description, img } = data.contentfulHome;
+  console.log(img);
   const gatsbyImage = getImage(img);
+  console.log(gatsbyImage);
 
   return (
     <div>
