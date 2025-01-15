@@ -5,7 +5,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Seo from "../../components/seo";
 
 const PortfolioPage = () => {
-  // Fetch data from contentful
+  // Fetch data from Contentful
   const data = useStaticQuery(graphql`
     query {
       allContentfulPortfolioItem {
@@ -28,8 +28,6 @@ const PortfolioPage = () => {
   `);
 
   const items = data.allContentfulPortfolioItem.nodes;
-  const gatsbyImage = getImage(items[0].image[0]);
-  console.log(gatsbyImage);
 
   return (
     <div>
@@ -47,31 +45,15 @@ const PortfolioPage = () => {
           >
             {/* Image Section */}
             <div className="col-md-6 text-center">
-              {item.image?.length > 0 ? (
-                <div
-                  style={{
-                    display: "flex",
-                    gap: "1rem",
-                    flexWrap: "wrap",
-                    justifyContent: "center",
-                  }}
-                >
-                  {item.image.map((img, imgIndex) => {
-                    const imageData = getImage(img.gatsbyImageData);
-                    return imageData ? (
-                      <GatsbyImage
-                        key={imgIndex}
-                        image={imageData}
-                        alt={img.description || item.title}
-                        className="img-fluid rounded"
-                      />
-                    ) : (
-                      <p key={imgIndex}>No image available</p>
-                    );
-                  })}
-                </div>
+              {/* Directly render the single image without map() */}
+              {item.image?.gatsbyImageData ? (
+                <GatsbyImage
+                  image={getImage(item.image.gatsbyImageData)}
+                  alt={item.image.description || item.title}
+                  className="img-fluid rounded"
+                />
               ) : (
-                <p>No images available for this project.</p>
+                <p>No image available for this project.</p>
               )}
             </div>
 
