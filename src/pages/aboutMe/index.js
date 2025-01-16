@@ -2,6 +2,7 @@ import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Navbar from "../../components/navbar";
+import Footer from "../../components/footer";
 import Seo from "../../components/seo";
 
 const AboutPage = () => {
@@ -26,11 +27,11 @@ const AboutPage = () => {
   console.log(gatsbyImage);
 
   return (
-    <div>
+    <div className="d-flex flex-column min-vh-100">
       {/* Navbar */}
       <Navbar />
-      <div className="container py-5">
-        {/* Main content */}
+      {/* Main content */}
+      <div className="flex-grow-1 container py-5">
         <div className="row align-items-center mt-5">
           {/* Left side - Image */}
           <div className="col-md-6 text-center">
@@ -54,6 +55,8 @@ const AboutPage = () => {
           </div>
         </div>
       </div>
+      {/* Footer */}
+      <Footer />
     </div>
   );
 };
