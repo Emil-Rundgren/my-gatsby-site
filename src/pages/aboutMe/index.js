@@ -25,6 +25,8 @@ const AboutPage = () => {
   console.log(img);
   const gatsbyImage = getImage(img);
   console.log(gatsbyImage);
+  console.log(data.contentfulAboutMe);
+  console.log(data.contentfulAboutMe.description.description);
 
   return (
     <div className="d-flex flex-column min-vh-100">
@@ -48,7 +50,7 @@ const AboutPage = () => {
 
           {/* Right side - Text content */}
           <div className="col-md-6">
-            <h1 className="display-4 fw-bold">{title}</h1>
+            <h1 className="display-6 fw-bold">{title}</h1>
             <p className="lead">{description.description}</p>
             {/* Button */}
             <button className="btn btn-dark btn-lg mt-3">Contact Me</button>

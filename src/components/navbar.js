@@ -5,14 +5,14 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 const navigation = [
   { name: "Home", href: "/", current: true },
   { name: "Portfolio", href: "/portfolio", current: false },
   { name: "About Me", href: "/aboutMe", current: false },
   { name: "Contact", href: "/contact", current: false },
-  { name: "404", href: "/404", current: false },
+  // { name: "404", href: "/404", current: false },
 ];
 
 function classNames(...classes) {
@@ -21,7 +21,7 @@ function classNames(...classes) {
 
 export default function Navbar() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <Disclosure as="nav" className="bg-black">
       {/* Main navigation container */}
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-16 items-center justify-between">
@@ -40,15 +40,11 @@ export default function Navbar() {
               />
             </DisclosureButton>
           </div>
-          {/* Logo and desktop navigation links */}
+          {/* Name and desktop navigation links */}
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
-            {/* Company logo */}
+            {/* Name */}
             <div className="flex shrink-0 items-center">
-              <img
-                alt="Your Company"
-                src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=500"
-                className="h-8 w-auto"
-              />
+              <p className="text-white text-lg font-bold mb-0">Emil Rundgren</p>
             </div>
             {/* Desktop navigation links */}
             <div className="hidden sm:ml-6 sm:block">
@@ -70,18 +66,6 @@ export default function Navbar() {
                 ))}
               </div>
             </div>
-          </div>
-          {/* Right-side menu icons */}
-          <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-            {/* Notification button */}
-            <button
-              type="button"
-              className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
-            >
-              <span className="absolute -inset-1.5" />
-              <span className="sr-only">View notifications</span>
-              <BellIcon aria-hidden="true" className="size-6" />
-            </button>
           </div>
         </div>
       </div>

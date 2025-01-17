@@ -36,7 +36,7 @@ const PortfolioPage = () => {
       <Navbar />
 
       {/* Section Title */}
-      <h1 className="text-center my-5 display-5 display-md-3 display-lg-1 fw-bold">
+      <h1 className="text-center my-5 display-6 display-md-3 display-lg-1 fw-bold">
         Watch My Latest Projects
       </h1>
 

@@ -65,7 +65,7 @@ const ContactPage = () => {
                   </a>
                 </li>
                 <li>
-                  <strong>Website:</strong>{" "}
+                  <strong>Githhub:</strong>{" "}
                   <a
                     href={url}
                     target="_blank"

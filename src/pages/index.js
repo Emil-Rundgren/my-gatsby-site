@@ -40,6 +40,7 @@ const Homepage = () => {
     <div>
       {/* Navbar component at the top of the page */}
       <Navbar />
+      {/* First Section */}
       <div className="container py-5">
         {/* Main content */}
         <div className="row align-items-center mt-5">
@@ -58,7 +59,7 @@ const Homepage = () => {
 
           {/* Right side - Text content */}
           <div className="col-md-6">
-            <h1 className="display-5 fw-bold">{title}</h1>
+            <h1 className="display-6 fw-bold">{title}</h1>
             <p className="lead">{description.description}</p>
             {/* Button */}
             <button className="btn btn-dark btn-lg mt-3">Contact Me</button>
@@ -66,8 +67,8 @@ const Homepage = () => {
         </div>
       </div>
 
-      {/* Section Title */}
-      <h1 className="text-center my-5 display-5 display-md-3 display-lg-1 fw-bold">
+      {/* Second Sction | Section Title */}
+      <h1 className="text-center my-5 display-6 display-md-3 display-lg-1 fw-bold">
         Watch My Latest Projects
       </h1>
 
@@ -90,7 +91,7 @@ const Homepage = () => {
                 {/* Display the project image */}
                 <GatsbyImage
                   image={image} // The image to display
-                  alt={project.image.description} // Alt text for accessibility
+                  alt={project.image?.description || "Default text"} // Alt text for accessibility
                 />
               </div>
             );

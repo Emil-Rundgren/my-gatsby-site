@@ -6,17 +6,11 @@ const Seo = ({ title }) => {
     query {
       site {
         siteMetadata {
-          description
-          siteUrl
           title
         }
       }
     }
   `);
-
-  const { siteUrl, description } = data.site.siteMetadata;
-
-  // console.log(siteUrl, description);
 
   return (
     <title>
