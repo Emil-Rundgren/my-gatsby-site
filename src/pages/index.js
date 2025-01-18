@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import "../styles/custom-colors.css";
 import Navigation from "../components/navigation";
 import Seo from "../components/seo";
 import Footer from "../components/footer";
@@ -40,96 +41,97 @@ const Homepage = () => {
     <div>
       {/* Navbar */}
       <Navigation />
-      {/* First Section */}
-      <div className="container py-5">
-        {/* Main content */}
-        <div className="row align-items-center mt-5">
-          {/* Left side - Image */}
-          <div className="col-md-6 text-center">
-            {gatsbyImage ? (
-              <GatsbyImage
-                image={gatsbyImage}
-                alt={img.description || "Profile picture"}
-                className="img-fluid rounded"
-              />
-            ) : (
-              <p>Image could not be loaded.</p>
-            )}
-          </div>
-
-          {/* Right side - Text content */}
-          <div className="col-md-6">
-            <h1 className="display-6 fw-bold">{title}</h1>
-            <p className="lead">{description.description}</p>
-            {/* Button */}
-            <Link className="btn btn-dark btn-lg mt-3" to="/contact">
-              Contact Me
-            </Link>
-          </div>
-        </div>
-      </div>
-
-      {/* Second Sction | Section Title */}
-      <h1 className="text-center my-5 display-6 display-md-3 display-lg-1 fw-bold">
-        Watch My Latest Projects
-      </h1>
-
-      {/* Carousel Container */}
-      <div
-        id="projectCarousel" // Unique ID for the carousel
-        className="carousel slide d-block w-75 mx-auto mb-5" // Bootstrap class for carousel functionality
-        data-bs-ride="carousel" // Enables automatic cycling of slides
-      >
-        {/* Inner container for carousel items */}
-        <div className="carousel-inner">
-          {/* Mapping through project data to dynamically create carousel items */}
-          {projects.map((project, index) => {
-            const image = getImage(project.image); // Fetch the image for the current project
-            return (
-              <div
-                key={project.title} // Unique key for each project
-                className={`carousel-item ${index === 0 ? "active" : ""}`} // First item is "active" for initial display
-              >
-                {/* Display the project image */}
-                <GatsbyImage
-                  image={image} // The image to display
-                  alt={project.image?.description || "Default text"} // Alt text for accessibility
-                />
+      <main className=" text-dark-blue">
+        {/* First Section */}
+        <section className="bg-light-gray">
+          <div className="container py-5">
+            {/* Main content */}
+            <div className="row align-items-center mt-5">
+              {/* Left side - Image */}
+              <div className="col-md-6 text-center">
+                {gatsbyImage ? (
+                  <GatsbyImage
+                    image={gatsbyImage}
+                    alt={img.description || "Profile picture"}
+                    className="img-fluid rounded shadow-light-blue"
+                  />
+                ) : (
+                  <p>Image could not be loaded.</p>
+                )}
               </div>
-            );
-          })}
-        </div>
 
-        {/* Previous button */}
-        <button
-          className="carousel-control-prev" // Bootstrap class for "previous" control
-          type="button"
-          data-bs-target="#projectCarousel" // Target the carousel ID
-          data-bs-slide="prev" // Slide to the previous item
-        >
-          <span
-            className="carousel-control-prev-icon bg-dark rounded-circle" // Icon for the previous button
-            aria-hidden="true" // Hides the icon from screen readers
-          ></span>
-          <span className="visually-hidden">Previous</span>{" "}
-          {/* Accessible text for screen readers */}
-        </button>
+              {/* Right side - Text content */}
+              <div className="col-md-6">
+                <h1 className="display-6 fw-bold text-dark-blue">{title}</h1>
+                <p className="lead">{description.description}</p>
+                {/* Button */}
+                <Link className="btn btn-orange btn-lg mt-3" to="/contact">
+                  Contact Me
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
-        {/* Next button */}
-        <button
-          className="carousel-control-next" // Bootstrap class for "next" control
-          type="button"
-          data-bs-target="#projectCarousel" // Target the carousel ID
-          data-bs-slide="next" // Slide to the next item
+        {/* Second Section | Section Title */}
+        <h1 className="text-center my-5 display-6 display-md-3 display-lg-1 fw-bold text-dark-blue">
+          Watch My Latest Projects
+        </h1>
+
+        {/* Carousel Container */}
+        <section
+          id="projectCarousel"
+          className="carousel slide d-block w-75 mx-auto mb-5 bg-white shadow-light-blue rounded"
+          data-bs-ride="carousel"
         >
-          <span
-            className="carousel-control-next-icon bg-dark rounded-circle" // Icon for the next button
-            aria-hidden="true" // Hides the icon from screen readers
-          ></span>
-          <span className="visually-hidden">Next</span>{" "}
-          {/* Accessible text for screen readers */}
-        </button>
-      </div>
+          {/* Inner container for carousel items */}
+          <div className="carousel-inner">
+            {projects.map((project, index) => {
+              const image = getImage(project.image);
+              return (
+                <div
+                  key={project.title}
+                  className={`carousel-item ${index === 0 ? "active" : ""}`}
+                >
+                  <GatsbyImage
+                    image={image}
+                    alt={project.image?.description || "Default text"}
+                    className="img-fluid rounded shadow-light-blue"
+                  />
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Previous button */}
+          <button
+            className="carousel-control-prev"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              className="carousel-control-prev-icon bg-dark rounded-circle"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Previous</span>
+          </button>
+
+          {/* Next button */}
+          <button
+            className="carousel-control-next"
+            type="button"
+            data-bs-target="#projectCarousel"
+            data-bs-slide="next"
+          >
+            <span
+              className="carousel-control-next-icon bg-dark rounded-circle"
+              aria-hidden="true"
+            ></span>
+            <span className="visually-hidden">Next</span>
+          </button>
+        </section>
+      </main>
       <Footer />
     </div>
   );
