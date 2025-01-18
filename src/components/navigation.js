@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Navbar, Nav, Container } from "react-bootstrap";
 import { graphql, useStaticQuery } from "gatsby";
+import "../styles/custom-colors.css";
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
@@ -22,7 +23,7 @@ const Navigation = () => {
   );
 
   return (
-    <Navbar expand="lg" className="bg-body-tertiary " data-bs-theme="dark">
+    <Navbar expand="lg" className="bg-dark-blue" data-bs-theme="dark">
       <Container>
         <Navbar.Brand href="/">Emil Rundgren</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />

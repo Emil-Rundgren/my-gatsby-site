@@ -1,0 +1,90 @@
+/* Custom Colors */
+:root {
+  --dark-blue: #0a2540;
+  --light-blue: #00a8e8;
+  --orange: #ff8c42;
+  --light-gray: #f8f9fa;
+  --white: #ffffff;
+}
+
+/* Background Colors */
+.bg-dark-blue {
+  background-color: var(--dark-blue) !important;
+}
+
+.bg-light-blue {
+  background-color: var(--light-blue) !important;
+}
+
+.bg-orange {
+  background-color: var(--orange) !important;
+}
+
+.bg-light-gray {
+  background-color: var(--light-gray) !important;
+}
+
+.bg-white {
+  background-color: var(--white) !important;
+}
+
+/* Text Colors */
+.text-dark-blue {
+  color: var(--dark-blue) !important;
+}
+
+.text-light-blue {
+  color: var(--light-blue) !important;
+}
+
+.text-orange {
+  color: var(--orange) !important;
+}
+
+.text-light-gray {
+  color: var(--light-gray) !important;
+}
+
+.text-white {
+  color: var(--white) !important;
+}
+
+/* Button Styles */
+.btn-dark-blue {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: none;
+}
+
+.btn-dark-blue:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+.btn-orange {
+  background-color: var(--orange);
+  color: var(--white);
+  border: none;
+}
+
+.btn-orange:hover {
+  background-color: var(--light-blue);
+  color: var(--white);
+}
+
+/* Utility Classes */
+.border-dark-blue {
+  border: 1px solid var(--dark-blue) !important;
+}
+
+.border-orange {
+  border: 1px solid var(--orange) !important;
+}
+
+.shadow-orange {
+  box-shadow: 0 4px 6px rgba(255, 140, 66, 0.3) !important;
+}
+
+.shadow-light-blue {
+  box-shadow: 0 4px 6px rgba(0, 168, 232, 0.3) !important;
+}
