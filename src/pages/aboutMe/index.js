@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Navbar from "../../components/navbar";
+import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import Seo from "../../components/seo";
 
@@ -31,7 +31,7 @@ const AboutPage = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       {/* Navbar */}
-      <Navbar />
+      <Navigation />
       {/* Main content */}
       <div className="flex-grow-1 container py-5">
         <div className="row align-items-center mt-5">

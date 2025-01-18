@@ -1,7 +1,7 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Navbar from "../components/navbar";
+import Navigation from "../components/navigation";
 import Seo from "../components/seo";
 import Footer from "../components/footer";
 
@@ -38,8 +38,8 @@ const Homepage = () => {
 
   return (
     <div>
-      {/* Navbar component at the top of the page */}
-      <Navbar />
+      {/* Navbar */}
+      <Navigation />
       {/* First Section */}
       <div className="container py-5">
         {/* Main content */}
@@ -62,7 +62,9 @@ const Homepage = () => {
             <h1 className="display-6 fw-bold">{title}</h1>
             <p className="lead">{description.description}</p>
             {/* Button */}
-            <button className="btn btn-dark btn-lg mt-3">Contact Me</button>
+            <Link className="btn btn-dark btn-lg mt-3" to="/contact">
+              Contact Me
+            </Link>
           </div>
         </div>
       </div>

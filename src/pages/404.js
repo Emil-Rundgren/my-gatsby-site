@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import Navbar from "../components/navbar";
+import Navigation from "../components/navigation";
 import Footer from "../components/footer";
 import Seo from "../components/seo";
 
@@ -8,7 +8,7 @@ const NotFoundPage = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       {/* Navbar */}
-      <Navbar />
+      <Navigation />
 
       {/* Main Content */}
       <div className="flex-grow-1 container py-5">

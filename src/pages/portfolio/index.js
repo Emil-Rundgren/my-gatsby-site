@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
-import Navbar from "../../components/Navbar";
+import Navigation from "../../components/navigation";
 import Footer from "../../components/Footer";
 import Seo from "../../components/Seo";
 
@@ -33,7 +33,7 @@ const PortfolioPage = () => {
   return (
     <div>
       {/* Navbar Section */}
-      <Navbar />
+      <Navigation />
 
       {/* Section Title */}
       <h1 className="text-center my-5 display-6 display-md-3 display-lg-1 fw-bold">

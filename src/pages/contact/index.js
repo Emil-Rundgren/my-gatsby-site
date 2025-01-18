@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Navbar from "../../components/navbar";
+import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import Seo from "../../components/seo";
 
@@ -25,13 +25,13 @@ const ContactPage = () => {
   return (
     <div className="d-flex flex-column min-vh-100">
       {/* Navbar */}
-      <Navbar />
+      <Navigation />
 
       {/* Main Content */}
       <div className="flex-grow-1 container py-5">
         {/* Header Section */}
         <div className="text-center mb-4">
-          <h1 className="display-4 fw-bold">{title}</h1>
+          <h1 className="display-6 fw-bold">{title}</h1>
           <p className="lead text-muted">{description}</p>
         </div>
 
