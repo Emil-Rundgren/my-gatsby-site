@@ -25,14 +25,20 @@ const Navigation = () => {
   return (
     <Navbar expand="lg" className="bg-dark-blue" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="/">Emil Rundgren</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Brand href="/" className="text-orange fw-bold">
+          Emil Rundgren
+        </Navbar.Brand>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="border-orange text-orange"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             {dynamicLinks.map((nav, index) => (
               <Nav.Link
                 key={index}
                 href={nav.slug === "home" ? "/" : `/${nav.slug}`}
+                className="text-light-gray text-hover-orange"
               >
                 {nav.title}
               </Nav.Link>
