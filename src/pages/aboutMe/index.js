@@ -37,7 +37,7 @@ const AboutPage = () => {
       <main className="flex-grow-1 container py-5 text-dark-blue">
         <div className="row align-items-center  bg-light-gray rounded py-4 px-3">
           {/* Left side - Image */}
-          <div className="col-md-6 text-center">
+          <div className="col-md-6 text-center pb-3">
             {gatsbyImage ? (
               <GatsbyImage
                 image={gatsbyImage}

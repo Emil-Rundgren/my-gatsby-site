@@ -48,12 +48,12 @@ const Homepage = () => {
             {/* Main content */}
             <div className="row align-items-center mt-5">
               {/* Left side - Image */}
-              <div className="col-md-6 text-center">
+              <div className="col-md-6 text-center pb-2">
                 {gatsbyImage ? (
                   <GatsbyImage
                     image={gatsbyImage}
                     alt={img.description || "Profile picture"}
-                    className="img-fluid rounded shadow-light-blue"
+                    className="img-fluid rounded"
                   />
                 ) : (
                   <p>Image could not be loaded.</p>

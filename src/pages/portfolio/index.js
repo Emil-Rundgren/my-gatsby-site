@@ -72,7 +72,7 @@ const PortfolioPage = () => {
                   <div className="col-md-6">
                     <div className="card-body">
                       <h2 className="fw-bold portfolio-title">{item.title}</h2>
-                      <p className="portfolio-description">
+                      <p className="portfolio-description lead text-dark-blue">
                         {item.description}
                       </p>
                       <p>

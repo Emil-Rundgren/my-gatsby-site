@@ -1,5 +1,5 @@
 import * as React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import Navigation from "../components/navigation";
 import Footer from "../components/footer";
@@ -31,7 +31,7 @@ const PortfolioItemTemplate = ({ data }) => {
           <div className="container py-5">
             <div className="row align-items-center">
               {/* Content */}
-              <div className="col-md-4">
+              <div className="col-md-4 order-2 order-md-1">
                 <h1 className="fw-bold display-6">{title}</h1>
                 <p>
                   <strong>Category: </strong>
@@ -40,20 +40,20 @@ const PortfolioItemTemplate = ({ data }) => {
                   </span>
                 </p>
                 <p>{publishDate}</p>
-                <p className="pt-2">{description}</p>
+                <p className="lead pt-2">{description}</p>
                 {/* Call-to-Action Button */}
-                <a href={url} className="btn btn-blush mt-3">
+                <Link to="#" className="btn btn-blush btn-lg mt-3">
                   View Live Project
-                </a>
+                </Link>
               </div>
 
               {/* Hero Image */}
-              <div className="col-md-8">
+              <div className="col-md-8 pb-2 order-1 order-md-2">
                 {heroImage ? (
                   <GatsbyImage
                     image={heroImage}
                     alt={heroImageDescription || "Project Image"}
-                    className="img-fluid rounded shadow-light-blue"
+                    className="img-fluid rounded "
                   />
                 ) : (
                   <p>No hero image available</p>
@@ -101,15 +101,15 @@ const PortfolioItemTemplate = ({ data }) => {
           <p>
             {longDescription?.longDescription || "No description available."}
           </p>
-          <a href={url} className="btn btn-blush mt-3">
+          <Link href={url} className="btn btn-blush mt-3">
             GitHub
-          </a>
+          </Link>
         </section>
 
         {/* Technologies Section */}
         <section className="container py-5">
           <h2 className="fw-bold text-dark-blue">Technologies Used</h2>
-          <ul className="list-unstyled">
+          <ul className="list-unstyled mt-3">
             {technologies?.map((tech, index) => (
               <li
                 key={index}
