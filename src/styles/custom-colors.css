@@ -38,8 +38,8 @@
   color: var(--light-blue) !important;
 }
 
-.text-coral {
-  color: var(--coral) !important;
+.text-blush {
+  color: var(--blush) !important;
 }
 
 .text-light-gray {
@@ -62,15 +62,31 @@
   color: var(--white);
 }
 
-.btn-coral {
-  background-color: var(--coral);
+.btn-blush {
+  background-color: var(--blush);
   color: var(--dark-blue);
   font-weight: bold;
   border: none;
+  position: relative; /* Required for pseudo-element positioning */
+  overflow: hidden; /* Ensures pseudo-elements don't overflow */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
-.btn-coral:hover {
-  background-color: var(--blush);
+.btn-blush::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  border: 3px solid var(--blush); /* Inside border color */
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease-in-out; /* Smooth fade-in */
+}
+
+.btn-blush:hover::after {
+  opacity: 1; /* Show border on hover */
 }
 
 /* Utility Classes */

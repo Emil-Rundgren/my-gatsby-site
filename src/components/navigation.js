@@ -25,7 +25,7 @@ const Navigation = () => {
   return (
     <Navbar expand="lg" className="bg-dark-blue" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="/" className="text-coral fw-bold">
+        <Navbar.Brand href="/" className="text-blush fw-bold">
           Emil Rundgren
         </Navbar.Brand>
         <Navbar.Toggle

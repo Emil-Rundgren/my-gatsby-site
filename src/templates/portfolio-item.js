@@ -27,22 +27,22 @@ const PortfolioItemTemplate = ({ data }) => {
       <Navigation />
       <main className="text-dark-blue">
         {/* Hero Section */}
-        <section className="bg-light-gray">
-          <div className="container my-5 py-5">
+        <section className="bg-light-gray py-5">
+          <div className="container py-5">
             <div className="row align-items-center">
               {/* Content */}
               <div className="col-md-4">
                 <h1 className="fw-bold display-6">{title}</h1>
                 <p>
                   <strong>Category: </strong>
-                  <span className="badge bg-dark-blue text-white me-3">
+                  <span className="badge bg-dark-blue text-white p-2">
                     {projectCategory}
                   </span>
                 </p>
                 <p>{publishDate}</p>
                 <p className="pt-2">{description}</p>
                 {/* Call-to-Action Button */}
-                <a href={url} className="btn btn-coral mt-3">
+                <a href={url} className="btn btn-blush mt-3">
                   View Live Project
                 </a>
               </div>
@@ -93,24 +93,28 @@ const PortfolioItemTemplate = ({ data }) => {
         </section>
 
         {/* Challenges Section */}
-        <section className="container my-5 py-4 bg-white rounded shadow-orange">
+
+        <section className="container  py-4 bg-white rounded shadow-orange">
           <h2 className="fw-bold text-dark-blue">
             Challenges and Lessons Learned
           </h2>
           <p>
             {longDescription?.longDescription || "No description available."}
           </p>
-          <a href={url} className="btn btn-coral mt-3">
+          <a href={url} className="btn btn-blush mt-3">
             GitHub
           </a>
         </section>
 
         {/* Technologies Section */}
-        <section className="container my-5">
+        <section className="container py-5">
           <h2 className="fw-bold text-dark-blue">Technologies Used</h2>
           <ul className="list-unstyled">
             {technologies?.map((tech, index) => (
-              <li key={index} className="badge bg-dark-blue text-white me-3">
+              <li
+                key={index}
+                className="badge bg-dark-blue text-white me-3 p-2"
+              >
                 {tech}
               </li>
             )) || <p>No technologies listed.</p>}

@@ -65,7 +65,7 @@ const Homepage = () => {
                 <h1 className="display-6 fw-bold text-dark-blue">{title}</h1>
                 <p className="lead">{description.description}</p>
                 {/* Button */}
-                <Link className="btn btn-coral  btn-lg mt-3" to="/contact">
+                <Link className="btn btn-blush btn-lg mt-3" to="/contact">
                   Contact Me
                 </Link>
               </div>
@@ -111,7 +111,7 @@ const Homepage = () => {
             data-bs-slide="prev"
           >
             <span
-              className="carousel-control-prev-icon bg-dark rounded-circle"
+              className="carousel-control-prev-icon bg-dark-blue rounded-circle"
               aria-hidden="true"
             ></span>
             <span className="visually-hidden">Previous</span>
@@ -125,7 +125,7 @@ const Homepage = () => {
             data-bs-slide="next"
           >
             <span
-              className="carousel-control-next-icon bg-dark rounded-circle"
+              className="carousel-control-next-icon bg-dark-blue rounded-circle"
               aria-hidden="true"
             ></span>
             <span className="visually-hidden">Next</span>

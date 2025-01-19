@@ -1,6 +1,7 @@
 import * as React from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, Link } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import "../../styles/custom-colors.css";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import Seo from "../../components/seo";
@@ -53,7 +54,9 @@ const AboutPage = () => {
             <h1 className="display-6 fw-bold">{title}</h1>
             <p className="lead">{description.description}</p>
             {/* Button */}
-            <button className="btn btn-coral btn-lg mt-3">Contact Me</button>
+            <Link className="btn btn-blush btn-lg mt-3" to="/contact">
+              Contact Me
+            </Link>
           </div>
         </div>
       </main>

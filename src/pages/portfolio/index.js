@@ -47,7 +47,7 @@ const PortfolioPage = () => {
           {/* Loop through all portfolio items */}
           {items.map((item, index) => (
             <React.Fragment key={item.slug}>
-              <div className="card my-5 p-3 shadow-sm portfolio-card">
+              <div className="card my-5 p-3 shadow-sm portfolio-card shadow-orange ">
                 <div
                   className={`row align-items-center g-0 ${
                     index % 2 === 0 ? "" : "flex-row-reverse"
@@ -76,10 +76,13 @@ const PortfolioPage = () => {
                         {item.description}
                       </p>
                       <p>
-                        <strong>Category:</strong> {item.projectCategory}
+                        <strong>Category: </strong>
+                        <span className="badge bg-dark-blue text-white me-2 p-2">
+                          {item.projectCategory}
+                        </span>
                       </p>
                       <Link to={`/portfolio/${item.slug}`}>
-                        <button className="btn btn-dark portfolio-btn mt-3">
+                        <button className="btn btn-blush text-dark-blue mt-3">
                           View Project
                         </button>
                       </Link>

@@ -1,5 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
+import "../../styles/custom-colors.css";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/footer";
 import Seo from "../../components/seo";
@@ -23,12 +24,12 @@ const ContactPage = () => {
     data.contentfulContact;
 
   return (
-    <div className="d-flex flex-column min-vh-100">
+    <div className="d-flex flex-column min-vh-100 bg-light-gray">
       {/* Navbar */}
       <Navigation />
 
       {/* Main Content */}
-      <div className="flex-grow-1 container py-5">
+      <main className="flex-grow-1 container py-5 text-dark-blue ">
         {/* Header Section */}
         <div className="text-center mb-4">
           <h1 className="display-6 fw-bold">{title}</h1>
@@ -38,7 +39,7 @@ const ContactPage = () => {
         {/* Contact Info Section */}
         <div className="row justify-content-center">
           <div className="col-md-6">
-            <div className="card border-0 shadow p-4">
+            <div className="card border-0 shadow-light-blue p-4 text-dark-blue">
               <h3 className="fw-bold mb-3">Contact Information</h3>
               <ul className="list-unstyled">
                 <li className="mb-2">
@@ -79,7 +80,7 @@ const ContactPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </main>
 
       {/* Footer */}
       <Footer />
