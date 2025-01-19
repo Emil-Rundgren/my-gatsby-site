@@ -44,7 +44,7 @@ const Homepage = () => {
       <main className=" text-dark-blue">
         {/* First Section */}
         <section className="bg-light-gray">
-          <div className="container py-5">
+          <div className="container pb-5 py-sm-5 pt-2 ">
             {/* Main content */}
             <div className="row align-items-center mt-5">
               {/* Left side - Image */}
@@ -63,7 +63,7 @@ const Homepage = () => {
               {/* Right side - Text content */}
               <div className="col-md-6">
                 <h1 className="display-6 fw-bold text-dark-blue">{title}</h1>
-                <p className="lead">{description.description}</p>
+                <p className="lead fs-lg-6">{description.description}</p>
                 {/* Button */}
                 <Link className="btn btn-blush btn-lg mt-3" to="/contact">
                   Contact Me

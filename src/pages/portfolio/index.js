@@ -39,7 +39,7 @@ const PortfolioPage = () => {
 
       <main className="portfolio-section">
         {/* Section Title */}
-        <h1 className="text-center pt-5 display-6 display-md-3 display-lg-1 fw-bold section-title">
+        <h1 className="text-center pt-2 pt-sm-5  display-6 display-md-3 display-lg-1 fw-bold section-title">
           Watch My Latest Projects
         </h1>
 
