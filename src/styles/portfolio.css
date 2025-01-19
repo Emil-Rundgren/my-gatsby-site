@@ -1,0 +1,44 @@
+/* Portfolio Section Styles */
+.portfolio-section {
+  background-color: var(--dark-gray);
+  padding: 2rem 0;
+}
+
+.section-title {
+  color: var(--dark-blue);
+}
+
+/* Card Styles */
+
+/* Image Styles */
+.portfolio-image {
+  border-radius: 0.5rem;
+}
+
+/* Title and Description */
+.portfolio-title {
+  color: var(--dark-blue);
+}
+
+.portfolio-description {
+  color: var(--gray);
+}
+
+/* Button Styles */
+.portfolio-btn {
+  background-color: var(--dark-blue);
+  border: none;
+  color: var(--white);
+}
+
+.portfolio-btn:hover {
+  background-color: var(--light-blue);
+}
+
+/* Separator Styles */
+.portfolio-separator {
+  border: none;
+  height: 1px;
+  background-color: var(--gray);
+  margin: 2rem 0;
+}

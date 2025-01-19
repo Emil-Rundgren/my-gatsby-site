@@ -33,15 +33,15 @@ const AboutPage = () => {
       {/* Navbar */}
       <Navigation />
       {/* Main content */}
-      <div className="flex-grow-1 container py-5">
-        <div className="row align-items-center mt-5">
+      <main className="flex-grow-1 container py-5 text-dark-blue">
+        <div className="row align-items-center  bg-light-gray rounded py-4 px-3">
           {/* Left side - Image */}
           <div className="col-md-6 text-center">
             {gatsbyImage ? (
               <GatsbyImage
                 image={gatsbyImage}
                 alt={img.description || "Profile picture"}
-                className="img-fluid rounded"
+                className="img-fluid rounded "
               />
             ) : (
               <p>Image could not be loaded.</p>
@@ -53,10 +53,11 @@ const AboutPage = () => {
             <h1 className="display-6 fw-bold">{title}</h1>
             <p className="lead">{description.description}</p>
             {/* Button */}
-            <button className="btn btn-dark btn-lg mt-3">Contact Me</button>
+            <button className="btn btn-coral btn-lg mt-3">Contact Me</button>
           </div>
         </div>
-      </div>
+      </main>
+
       {/* Footer */}
       <Footer />
     </div>

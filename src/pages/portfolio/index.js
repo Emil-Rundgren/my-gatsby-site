@@ -1,6 +1,8 @@
 import * as React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import "../../styles/custom-colors.css";
+import "../../styles/portfolio.css";
 import Navigation from "../../components/navigation";
 import Footer from "../../components/Footer";
 import Seo from "../../components/Seo";
@@ -35,52 +37,65 @@ const PortfolioPage = () => {
       {/* Navbar Section */}
       <Navigation />
 
-      {/* Section Title */}
-      <h1 className="text-center my-5 display-6 display-md-3 display-lg-1 fw-bold">
-        Watch My Latest Projects
-      </h1>
+      <main className="portfolio-section">
+        {/* Section Title */}
+        <h1 className="text-center pt-5 display-6 display-md-3 display-lg-1 fw-bold section-title">
+          Watch My Latest Projects
+        </h1>
 
-      <div className="container pb-5">
-        {/* Loop through all portfolio items */}
-        {items.map((item, index) => (
-          <div key={item.slug} className="card my-5 p-3 shadow-sm border-0">
-            <div
-              className={`row align-items-center g-0 ${
-                index % 2 === 0 ? "" : "flex-row-reverse"
-              }`}
-            >
-              {/* Image Section */}
-              <div className="col-md-6">
-                {item.image?.gatsbyImageData ? (
-                  <GatsbyImage
-                    image={getImage(item.image.gatsbyImageData)}
-                    alt={item.image.description || item.title}
-                    className="img-fluid rounded-start"
-                  />
-                ) : (
-                  <p className="text-center">
-                    No image available for this project.
-                  </p>
-                )}
-              </div>
+        <div className="container pb-5">
+          {/* Loop through all portfolio items */}
+          {items.map((item, index) => (
+            <React.Fragment key={item.slug}>
+              <div className="card my-5 p-3 shadow-sm portfolio-card">
+                <div
+                  className={`row align-items-center g-0 ${
+                    index % 2 === 0 ? "" : "flex-row-reverse"
+                  }`}
+                >
+                  {/* Image Section */}
+                  <div className="col-md-6">
+                    {item.image?.gatsbyImageData ? (
+                      <GatsbyImage
+                        image={getImage(item.image.gatsbyImageData)}
+                        alt={item.image.description || item.title}
+                        className="img-fluid rounded-start portfolio-image"
+                      />
+                    ) : (
+                      <p className="text-center">
+                        No image available for this project.
+                      </p>
+                    )}
+                  </div>
 
-              {/* Text Section */}
-              <div className="col-md-6">
-                <div className="card-body">
-                  <h2 className="fw-bold">{item.title}</h2>
-                  <p>{item.description}</p>
-                  <p>
-                    <strong>Category:</strong> {item.projectCategory}
-                  </p>
-                  <Link to={`/portfolio/${item.slug}`}>
-                    <button className="btn btn-dark mt-3">View Project</button>
-                  </Link>
+                  {/* Text Section */}
+                  <div className="col-md-6">
+                    <div className="card-body">
+                      <h2 className="fw-bold portfolio-title">{item.title}</h2>
+                      <p className="portfolio-description">
+                        {item.description}
+                      </p>
+                      <p>
+                        <strong>Category:</strong> {item.projectCategory}
+                      </p>
+                      <Link to={`/portfolio/${item.slug}`}>
+                        <button className="btn btn-dark portfolio-btn mt-3">
+                          View Project
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
+
+              {/* Separator */}
+              {index < items.length - 1 && (
+                <hr className="portfolio-separator" />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+      </main>
 
       {/* Footer Section */}
       <Footer />

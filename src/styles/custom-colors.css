@@ -2,7 +2,8 @@
 :root {
   --dark-blue: #0a2540;
   --light-blue: #00a8e8;
-  --orange: #ff8c42;
+  --coral: #ff6f61;
+  --blush: #ffb3a6;
   --light-gray: #f8f9fa;
   --white: #ffffff;
 }
@@ -37,8 +38,8 @@
   color: var(--light-blue) !important;
 }
 
-.text-orange {
-  color: var(--orange) !important;
+.text-coral {
+  color: var(--coral) !important;
 }
 
 .text-light-gray {
@@ -61,15 +62,15 @@
   color: var(--white);
 }
 
-.btn-orange {
-  background-color: var(--orange);
-  color: var(--white);
+.btn-coral {
+  background-color: var(--coral);
+  color: var(--dark-blue);
+  font-weight: bold;
   border: none;
 }
 
-.btn-orange:hover {
-  background-color: var(--light-blue);
-  color: var(--white);
+.btn-coral:hover {
+  background-color: var(--blush);
 }
 
 /* Utility Classes */
@@ -87,4 +88,9 @@
 
 .shadow-light-blue {
   box-shadow: 0 4px 6px rgba(0, 168, 232, 0.3) !important;
+}
+
+/* Hover Effect on text */
+.text-hover-orange:hover {
+  color: var(--orange);
 }

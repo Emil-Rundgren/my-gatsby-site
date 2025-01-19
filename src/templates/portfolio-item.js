@@ -25,86 +25,98 @@ const PortfolioItemTemplate = ({ data }) => {
     <div>
       {/* Navbar */}
       <Navigation />
+      <main className="text-dark-blue">
+        {/* Hero Section */}
+        <section className="bg-light-gray">
+          <div className="container my-5 py-5">
+            <div className="row align-items-center">
+              {/* Content */}
+              <div className="col-md-4">
+                <h1 className="fw-bold display-6">{title}</h1>
+                <p>
+                  <strong>Category: </strong>
+                  <span className="badge bg-dark-blue text-white me-3">
+                    {projectCategory}
+                  </span>
+                </p>
+                <p>{publishDate}</p>
+                <p className="pt-2">{description}</p>
+                {/* Call-to-Action Button */}
+                <a href={url} className="btn btn-coral mt-3">
+                  View Live Project
+                </a>
+              </div>
 
-      {/* Hero Section */}
-      <section className="container my-5 py-5 flex column-gap-4">
-        <div className="row col-md-12 mx-auto">
-          {/* Right side | Content */}
-          <div className="col-md-4">
-            <h1 className=" fw-bold .fs-3 text">{title}</h1>
-            <p>
-              <strong>Category: </strong>
-              <span className="badge bg-dark text-white me-3">
-                {projectCategory}
-              </span>
-            </p>
-            <p>{publishDate}</p>
-            <p className="pt-2">{description}</p>
-            {/* Call-to-Action Button */}
-            <button href="#" className="btn btn-dark">
-              View Live Project
-            </button>
+              {/* Hero Image */}
+              <div className="col-md-8">
+                {heroImage ? (
+                  <GatsbyImage
+                    image={heroImage}
+                    alt={heroImageDescription || "Project Image"}
+                    className="img-fluid rounded shadow-light-blue"
+                  />
+                ) : (
+                  <p>No hero image available</p>
+                )}
+              </div>
+            </div>
           </div>
-          {/* Left side | Image */}
-          <div className="col-md-8">
-            {heroImage ? (
-              <GatsbyImage
-                image={heroImage}
-                alt={heroImageDescription || "Project Image"}
-                className="img-fluid rounded"
-              />
+        </section>
+
+        {/* Image Gallery */}
+        <section className="container my-5">
+          <h2 className="fw-bold text-center text-dark-blue">
+            Project Gallery
+          </h2>
+          <div className="row mt-4">
+            {images?.length > 0 ? (
+              images.map((img, index) => {
+                const galleryImage = getImage(img.gatsbyImageData);
+                return galleryImage ? (
+                  <div key={index} className="col-md-4 mb-4">
+                    <GatsbyImage
+                      image={galleryImage}
+                      alt={img.description || `Project image ${index + 1}`}
+                      className="img-fluid rounded shadow-light-blue"
+                    />
+                  </div>
+                ) : (
+                  <p key={index}>No image available</p>
+                );
+              })
             ) : (
-              <p>No hero image available</p>
+              <p className="text-center">
+                No images available for this project.
+              </p>
             )}
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Image Gallery Sections */}
-      <h2 className="fw-bold text-center">Project Gallery</h2>
-      <section className="container my-5 flex">
-        <div className="row mt-4 col-md-12 mx-auto">
-          {images?.length > 0 ? (
-            images.map((img, index) => {
-              const galleryImage = getImage(img.gatsbyImageData);
-              return galleryImage ? (
-                <div key={index} className="col-md-4 mb-4">
-                  <GatsbyImage
-                    image={galleryImage}
-                    alt={img.description || `Project image ${index + 1}`}
-                    className="img-fluid rounded"
-                  />
-                </div>
-              ) : (
-                <p key={index}>No image available</p>
-              );
-            })
-          ) : (
-            <p>No images available for this project.</p>
-          )}
-        </div>
-      </section>
+        {/* Challenges Section */}
+        <section className="container my-5 py-4 bg-white rounded shadow-orange">
+          <h2 className="fw-bold text-dark-blue">
+            Challenges and Lessons Learned
+          </h2>
+          <p>
+            {longDescription?.longDescription || "No description available."}
+          </p>
+          <a href={url} className="btn btn-coral mt-3">
+            GitHub
+          </a>
+        </section>
 
-      {/* Challenges and Lessons Learned Section */}
-      <section className="container">
-        <h2 className="fw-bold">Challenges and Lessons Learned</h2>
-        <p>{longDescription?.longDescription || "No description available."}</p>
-        <a href={url} className="btn btn-dark">
-          GitHub
-        </a>
-      </section>
-
-      {/* Technologies Section */}
-      <section className="container my-5">
-        <h2 className="fw-bold">Technologies Used</h2>
-        <ul className="list-unstyled">
-          {technologies?.map((tech, index) => (
-            <li key={index} className="badge bg-dark text-white me-3">
-              {tech}
-            </li>
-          )) || <p>No technologies listed.</p>}
-        </ul>
-      </section>
+        {/* Technologies Section */}
+        <section className="container my-5">
+          <h2 className="fw-bold text-dark-blue">Technologies Used</h2>
+          <ul className="list-unstyled">
+            {technologies?.map((tech, index) => (
+              <li key={index} className="badge bg-dark-blue text-white me-3">
+                {tech}
+              </li>
+            )) || <p>No technologies listed.</p>}
+          </ul>
+        </section>
+      </main>
 
       {/* Footer */}
       <Footer />

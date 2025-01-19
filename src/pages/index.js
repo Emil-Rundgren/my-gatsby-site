@@ -65,7 +65,7 @@ const Homepage = () => {
                 <h1 className="display-6 fw-bold text-dark-blue">{title}</h1>
                 <p className="lead">{description.description}</p>
                 {/* Button */}
-                <Link className="btn btn-orange btn-lg mt-3" to="/contact">
+                <Link className="btn btn-coral  btn-lg mt-3" to="/contact">
                   Contact Me
                 </Link>
               </div>
