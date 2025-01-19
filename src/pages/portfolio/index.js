@@ -4,8 +4,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image";
 import "../../styles/custom-colors.css";
 import "../../styles/portfolio.css";
 import Navigation from "../../components/navigation";
-import Footer from "../../components/Footer";
-import Seo from "../../components/Seo";
+import Footer from "../../components/footer";
+import Seo from "../../components/seo";
 
 const PortfolioPage = () => {
   // Fetch data from Contentful
@@ -39,11 +39,13 @@ const PortfolioPage = () => {
 
       <main className="portfolio-section">
         {/* Section Title */}
-        <h1 className="text-center pt-2 pt-sm-5  display-6 display-md-3 display-lg-1 fw-bold section-title">
-          Watch My Latest Projects
-        </h1>
+        <section className="text-center pt-2 pt-sm-5 ">
+          <h1 className="display-6 display-md-3 display-lg-1 fw-bold section-title">
+            Watch My Latest Projects
+          </h1>
+        </section>
 
-        <div className="container pb-5">
+        <section className="container pb-5">
           {/* Loop through all portfolio items */}
           {items.map((item, index) => (
             <React.Fragment key={item.slug}>
@@ -97,7 +99,7 @@ const PortfolioPage = () => {
               )}
             </React.Fragment>
           ))}
-        </div>
+        </section>
       </main>
 
       {/* Footer Section */}

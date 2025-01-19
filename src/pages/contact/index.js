@@ -31,13 +31,13 @@ const ContactPage = () => {
       {/* Main Content */}
       <main className="flex-grow-1 container py-5 text-dark-blue ">
         {/* Header Section */}
-        <div className="text-center mb-4">
+        <section className="text-center mb-4">
           <h1 className="display-6 fw-bold">{title}</h1>
           <p className="lead text-muted">{description}</p>
-        </div>
+        </section>
 
         {/* Contact Info Section */}
-        <div className="row justify-content-center">
+        <section className="row justify-content-center">
           <div className="col-md-6">
             <div className="card border-0 shadow-light-blue p-4 text-dark-blue">
               <h3 className="fw-bold mb-3">Contact Information</h3>
@@ -79,7 +79,7 @@ const ContactPage = () => {
               </ul>
             </div>
           </div>
-        </div>
+        </section>
       </main>
 
       {/* Footer */}
